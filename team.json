@@ -1,0 +1,12 @@
+{
+    "name": "測試團隊",
+    "org": "國立台灣師範大學 資訊工程學系",
+    "members": [
+        {
+            "name": "Jacob Lin",
+            "email": "jacob@jacoblin.cool",
+            "github": "JacobLinCool"
+        }
+    ],
+    "program": "agent.ts"
+}

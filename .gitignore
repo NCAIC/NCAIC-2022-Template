@@ -1,0 +1,13 @@
+# Logs
+logs
+*.log
+
+# dotenv environment variables file
+.env
+.env.test
+
+# Node dependency directories
+node_modules/
+
+# macOS DS_Store file
+**/.DS_Store
