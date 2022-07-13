@@ -8,6 +8,7 @@ Checkout [`team.json`](./team.json)
 
 ```json
 {
+    "register": false,
     "name": "Team Name",
     "org": "Team Organization",
     "members": [
@@ -33,3 +34,8 @@ For every member, the only required field is `name`, and the other fields are op
 ## Write Your Agent Code
 
 Your code can be anywere in the repository, but you must set the `program` field to the path of your agent source code file.
+
+
+## Register for the contest
+
+Set the `register` field to `true` in `team.json` to register for the contest.

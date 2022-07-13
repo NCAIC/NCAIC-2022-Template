@@ -1,4 +1,5 @@
 {
+    "register": false,
     "name": "測試團隊",
     "org": "國立台灣師範大學 資訊工程學系",
     "members": [
