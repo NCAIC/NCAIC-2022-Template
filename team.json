@@ -6,7 +6,12 @@
             "name": "Jacob Lin",
             "email": "jacob@jacoblin.cool",
             "github": "JacobLinCool"
-        }
+        },
+        {
+            "name": "HowChien Lu",
+            "email": "howardimportant@gmail.com",
+            "github": "howard9199"
+        }        
     ],
     "program": "agent.ts"
 }
