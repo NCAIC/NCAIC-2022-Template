@@ -1,3 +1,4 @@
+// @ts-ignore
 const [BOARDSIZE, EMPTY, BLACK, WHITE] = [15, 0, 1, 2];
 
 /**
@@ -8,6 +9,7 @@ const [BOARDSIZE, EMPTY, BLACK, WHITE] = [15, 0, 1, 2];
  * @param timer 該局我方剩餘時間
  * @returns [x, y] 該局下棋位置
  */
+// @ts-ignore
 function main(board: number[][], stone: number, timer: number): [number, number] {
     let [x, y] = [0, 0];
 
@@ -21,16 +23,16 @@ function main(board: number[][], stone: number, timer: number): [number, number]
 
 process.stdin.on("data", (data) => {
     const raw = data.toString();
-    const parts = raw.replace(/[^,\s?0-9-]/g, "");
+    const parts = raw.split(/, /g);
 
-    const board: number[][] = Array.from({ length: BOARDSIZE }, () => Array.from({ length: BOARDSIZE }, () => 0));
+    const board = Array.from({ length: BOARDSIZE }, () => Array.from({ length: BOARDSIZE }, () => 0));
     for (let i = 0; i < BOARDSIZE; i++) {
         for (let j = 0; j < BOARDSIZE; j++) {
             board[i][j] = parseInt(parts[i * BOARDSIZE + j]);
         }
     }
     const stone = parseInt(parts[225]);
-    const timer = parseInt(parts[226]);
+    const timer = parseFloat(parts[226]);
 
     const [x, y] = main(board, stone, timer);
 
@@ -53,6 +55,7 @@ process.stdin.on("data", (data) => {
  *     [0, 1, 1, 1, 2]]
  *  peek(board, 2, 2, 1) -> [[1, true], [1, false], [2, false], [1, false], [2, false], [1, true], [1, true], [0, true]]
  */
+// @ts-ignore
 function peek(board: number[][], i: number, j: number, stone: number): [number, boolean][] {
     if (i < 0 || i >= BOARDSIZE || j < 0 || j >= BOARDSIZE) {
         throw new Error("Invalid index to peek!");
