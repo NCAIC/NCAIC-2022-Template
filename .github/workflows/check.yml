@@ -33,9 +33,6 @@ jobs:
             - name: Install esbuild for TypeScript support
               run: npm i -g esbuild && esbuild --version
 
-            - name: Install gcc / g++ for C / C++ support
-              run: sudo apt update && sudo apt install -y gcc g++
-
             - name: Check Language Support
               run: ncaic check
 
