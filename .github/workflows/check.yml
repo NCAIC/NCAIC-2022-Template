@@ -1,0 +1,37 @@
+name: Verify and Test
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+
+jobs:
+    verify:
+        name: Verify team.json
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v3
+
+            - name: Install NCAIC CLI Tool
+              run: npm i -g ncaic && ncaic --version
+
+            - name: Verify team.json
+              run: ncaic verify
+
+    test:
+        name: Test target program
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v3
+
+            - name: Install NCAIC CLI Tool
+              run: npm i -g ncaic && ncaic --version
+
+            - name: Check Language Support
+              run: ncaic check
+
+            - name: Test target program
+              run: ncaic test
