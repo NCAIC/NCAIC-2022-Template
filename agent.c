@@ -38,7 +38,7 @@ int main() {
 
     Position selected = run(board, &stone, &time);
 
-    printf("%" PRId8 ", %" PRId8 "\n", selected.x, selected.y);
+    printf("%" PRId8 " %" PRId8 "\n", selected.y, selected.x);
 
     return EXIT_SUCCESS;
 }

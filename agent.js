@@ -34,7 +34,7 @@ process.stdin.on("data", (data) => {
 
     const [x, y] = main(board, stone, timer);
 
-    console.log(x, y);
+    console.log(y, x);
 });
 
 /**

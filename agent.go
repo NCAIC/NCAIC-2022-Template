@@ -16,7 +16,7 @@ func main() {
 
 	var x, y = run()
 
-	fmt.Printf("%d, %d\n", x, y)
+	fmt.Printf("%d, %d\n", y, x)
 }
 
 func run() (int32, int32) {

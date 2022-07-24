@@ -19,7 +19,7 @@ fn main() {
     // eprintln!("{:?} {} {}", board, stone, time);
 
     let (x, y) = run(board, stone, time);
-    println!("{} {}", x, y);
+    println!("{} {}", y, x);
 }
 
 
