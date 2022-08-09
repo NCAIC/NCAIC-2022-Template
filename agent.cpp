@@ -53,7 +53,7 @@ Peeked* peek(int board[], int i, int j, int stone) {
         exit(EXIT_FAILURE);
     }
 
-    Peeked* ret = new Peeked[8];
+    Peeked* ret = new Peeked[8]();
 
     int delX = 0, delY = 0;
 
