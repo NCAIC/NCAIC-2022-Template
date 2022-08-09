@@ -19,51 +19,45 @@ typedef struct
     bool empty;
 } Peeked;
 
-Peeked *peek(int board[], int i, int j, int stone);
-Position run(int board[], int *stone, double *time);
-void parse(int board[], int *stone, double *time);
+Peeked* peek(int board[], int i, int j, int stone);
+Position run(int board[], int stone, double time);
+void parse(int board[], int* stone, double* time);
 
-Position run(int board[], int *stone, double *time)
-{
-    Position pos = {0, 0};
-    while (board[pos.y * BOARDSIZE + pos.x] != EMPTY)
-    {
+Position run(int board[], int stone, double time) {
+    Position pos = { 0, 0 };
+    while (board[pos.y * BOARDSIZE + pos.x] != EMPTY) {
         pos.x = rand() % BOARDSIZE;
         pos.y = rand() % BOARDSIZE;
     }
     return pos;
 }
 
-int main()
-{
+int main() {
     srand(time(NULL));
 
-    int *board = new int[225];
+    int* board = new int[225];
     int stone = 0;
     double time = 0;
 
     parse(board, &stone, &time);
 
-    Position selected = run(board, &stone, &time);
+    Position selected = run(board, stone, time);
     cout << selected.y << " " << selected.x << endl;
 
     delete[] board;
     return EXIT_SUCCESS;
 }
 
-Peeked *peek(int board[], int i, int j, int stone)
-{
-    if (i < 0 || i >= BOARDSIZE || j < 0 || j >= BOARDSIZE)
-    {
+Peeked* peek(int board[], int i, int j, int stone) {
+    if (i < 0 || i >= BOARDSIZE || j < 0 || j >= BOARDSIZE) {
         exit(EXIT_FAILURE);
     }
 
-    Peeked *ret = new Peeked[8];
+    Peeked* ret = new Peeked[8];
 
     int delX = 0, delY = 0;
 
-    for (size_t k = 0; k < 8; k++)
-    {
+    for (size_t k = 0; k < 8; k++) {
         int y = i, x = j;
 
         if (k == 2 || k == 6)
@@ -76,8 +70,7 @@ Peeked *peek(int board[], int i, int j, int stone)
         else
             delX = k > 0 && k < 4 ? 1 : -1;
 
-        while (true)
-        {
+        while (true) {
             y += delY;
             x += delX;
             if (y < 0 || y >= BOARDSIZE)
@@ -98,14 +91,12 @@ Peeked *peek(int board[], int i, int j, int stone)
     return ret;
 }
 
-void parse(int board[], int *stone, double *time)
-{
+void parse(int board[], int* stone, double* time) {
     string S, T;
     getline(cin, S);
 
     stringstream X(S);
-    for (size_t i = 0; i < 225; i++)
-    {
+    for (size_t i = 0; i < 225; i++) {
         getline(X, T, ',');
         board[i] = stoi(T);
     }
