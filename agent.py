@@ -15,7 +15,6 @@ user:
         remain_time: float
             remaining time(unit: second)
     return: row, column
-定義請看 variables.py
 輔助函式請看 simplelib.py
 整個 user 都可以改，除此之外都不要改                                                                
 NOTE: 若要debug，請使用 print("message", file=sys.stderr)，不要 print 到stdout
